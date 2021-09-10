@@ -1,0 +1,117 @@
+.gradient{
+    background-image: linear-gradient(to right,black 70%, white);
+}
+
+/********** header & nav ************/
+header nav img {
+    width: 100px;
+}
+
+header nav div ul li{
+    margin: auto 10px;
+}
+
+header nav div ul li a:hover{
+    background-color: white;
+    text-decoration: solid underline black !important;
+    color: black !important;
+    transition: 0.3s;
+}
+
+/*************** About us *************/
+.aboutus hr{
+    border: red solid 1px;
+    border-radius: 50%;
+}
+#hr1{
+    width: 50%;
+}
+#hr2{
+    width: 30%;
+}
+#hr3{
+    width: 20%;
+    height: 0;
+}
+#hr4{
+    width: 10%;
+}
+.aboutus .row{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 90%;
+}
+
+.aboutus .row img{
+    padding: 50px;
+}
+
+.aboutus .row .content section.middle{
+    margin: 20px 0;
+}
+
+/**************** Gallery *************/
+
+.gallery .galleryNav {
+    width: 90%;
+    margin: auto;
+}
+
+.gallery .galleryNav ul{
+    width: 60%;
+    margin: auto;
+    border-left: solid white 1px;
+    border-right: solid white 1px;
+}
+
+.gallery .galleryNav ul li{
+    border-radius: 5%;
+    border: solid 1px transparent;
+}
+
+.gallery .galleryNav ul li:hover{
+    border: white solid 1px;
+}
+
+.gallery .galleryNav ul li a{
+    color: white !important;
+}
+
+.gallery .galleryNav ul li .active{
+    background-color: white;
+    color: black !important;
+    border-radius: 5%;
+}
+
+.gallery .tab-content{
+    margin: auto;
+    width: 90%;
+}
+
+.gallery .tab-content img{
+    border-radius: 10%;
+}
+
+/************ Footer ************/
+footer{
+    color: black;
+}
+footer > div{
+    width: 90%;
+}
+
+footer .nav li{
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+footer .nav li a{
+    color: black;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+footer .nav li a:hover{
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}

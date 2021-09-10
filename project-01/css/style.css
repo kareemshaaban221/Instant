@@ -1,0 +1,374 @@
+/******** predesign *********/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    border-bottom: 10px solid black;
+    border-top: 10px solid black;
+    background-color: rgba(128, 128, 128, 0.05);
+}
+
+.main .body {
+    width: 90%;
+    margin: auto;
+    padding: 10px 0;
+}
+
+.row {
+    display: flex;
+    margin: 10px 0;
+    justify-content: space-between;
+}
+
+.headText {
+    color: rgb(255, 72, 0);
+    font-weight: 600;
+    font-size: 17px;
+}
+
+/******** End predesign *********/
+
+/*********** Header **********/
+
+/***********Logo & Navigation bar**********/
+.main header{
+    position: relative;
+}
+
+.main header .row .logo {
+    color: rgba(255, 72, 0, 0.5);
+    width: 49%;
+}
+
+.main header .row .nav {
+    width: 49%;
+}
+
+.main header .row .logo .logo1 {
+    color: rgb(255, 72, 0);
+}
+
+.main .body header ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.main .body header ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(214, 214, 214);
+}
+
+.main .body header ul li a:hover {
+    color: rgba(255, 72, 0, 0.5);
+}
+
+.main .body header ul li a.current {
+    color: rgb(255, 72, 0);
+}
+
+.main header .row .dropdown{
+    background-image: url(../imgs/icons/dropdown.png);
+    background-size: 100% 100%;
+    width: 30px;
+    height: 30px;
+    margin: 5px 0px;
+    display: none;
+}
+
+.main header .row .dropdownListContent{
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background-color: white;
+    border: 0.5px solid black;
+    opacity: 0;
+    padding: 10px;
+    transition: all 0.3s;
+}
+
+.main header .row .dropdown:hover + .dropdownListContent{
+    opacity: 1;
+    top: 50px;
+}
+
+.main header .row .dropdown:hover{
+    cursor: pointer;
+}
+
+.main header .row .dropdownListContent ul li{
+    margin: 10px;
+}
+
+/***********END Logo & Navigation bar**********/
+
+
+/*********** Banner **********/
+.main header .banner {
+    height: 300px;
+    background-image: url(../imgs/banner2.jpg);
+    background-size: 100% 100%;
+}
+
+/*********** End Banner **********/
+
+/*********** End Header **********/
+
+/*********** Sections **********/
+.main .sections .container{
+    display: inline-block;
+}
+.main .sections section.middle{
+    margin: 0 5px;
+}
+
+.main .sections section.middle .row, .main .sections section.middle .content{
+    padding: 0 5px;
+}
+
+.main .sections section .sectionImages img {
+    width: 49%;
+    height: 150px;
+    /* margin: 0 5px; */
+}
+.main .sections section .sectionImages img:hover{
+    border: solid 2px white;
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}
+
+.main .sections section .content img {
+    width: 20%;
+    height: 50px;
+}
+
+.main .sections section .content a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: rgb(255, 72, 0);
+    color: white;
+    border-radius: 10%;
+}
+
+.main .sections section .content a:hover {
+    background-color: rgb(194, 55, 0);
+}
+
+.main .sections section .content .contentHeader p {
+    padding: 10px 0;
+    margin: 0 20px;
+}
+
+/*********** End Sections **********/
+
+/*********** Recent works **********/
+.main .recentHeader {
+    display: inline-block;
+    width: 190px;
+}
+
+.main .afterRecent {
+    display: inline-block;
+    width: 100%;
+    background-color: rgb(214, 214, 214);
+}
+
+.main .row.recentItems {
+    margin: 20px 0;
+}
+
+.main .recentItems section {
+    width: 23%;
+    height: 265px;
+    border: 0.5px solid rgb(214, 214, 214);
+    position: relative;
+}
+
+.main .recentItems section .bgItem{
+    overflow: visible;
+    height: 0;
+    background-color: rgba(255, 72, 0, 0.5);
+}
+
+.main .recentItems section:hover .bgItem{
+    height: 100%;
+    transition: 0.3s;
+}
+
+.main .recentItems section img {
+    width: 100%;
+    height: 200px;
+    border-bottom: 0.5px solid rgb(214, 214, 214);
+}
+
+.main .recentItems section .content {
+    padding: 10px;
+}
+
+.main .recentItems section .content h2 {
+    font-size: 1em;
+    font-weight: bold;
+    color: rgb(221, 221, 221);
+}
+
+.main .recentItems section .content p {
+    color: rgb(255, 72, 0);
+    font-weight: bold;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+/*********** End Recent works **********/
+
+/*********** Footer design **********/
+.main .footer {
+    background-color: rgba(255, 72, 0, 0.5);
+}
+
+.main .footer .footerBg {
+    background-color: white;
+    width: 92%;
+    margin: auto;
+
+}
+
+.main .footer .footerBg footer {
+    width: 97.8%;
+    background-color: rgb(255, 72, 0);
+    margin: auto;
+}
+
+.main .footer .footerBg footer .row {
+    padding: 10px;
+}
+
+.main .footer .footerBg footer .row .col {
+    padding: 10px;
+}
+
+.main .footer .footerBg footer .row .col h2 {
+    color: rgb(238, 238, 238);
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.main .footer .footerBg footer .row .col p {
+    font-size: 0.8em;
+    color: rgb(238, 238, 238);
+}
+
+.main .footer .footerBg footer .row .col .footerLinks {
+    margin: 10px 0;
+    padding: 10px 0;
+}
+
+.main .footer .footerBg footer .row .col .footerLinks a:hover img {
+    transform: scale(1.2);
+}
+
+.main .footer .footerBg footer .row .col .footerLinks a img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+/*********** End Footer design **********/
+
+/*********** Large Devices *********/
+@media (max-width: 1184px){
+    .main .recentItems section{
+        height: 283px;
+    }
+}
+
+@media (max-width: 1025px){
+    /******** Nav **********/
+    .main header .row .nav{
+        display: none;
+    }
+    .main header .row .dropdown{
+        display: block;
+    }
+
+    /******** Sections ********/
+    .main .sections{
+        flex-wrap: wrap;
+    }
+    .main .sections .container{
+        background-color: rgb(255, 72, 0);
+    }
+    .main .sections .container section{
+        width: 49%;
+        margin: auto;
+        padding: 5px 10px;
+        background-color: rgb(238, 238, 238);
+    }
+    .main .sections .container section.middle{
+        border-top: 10px solid rgb(255, 72, 0);
+        border-bottom: 10px solid rgb(255, 72, 0);
+    }
+}
+
+/*********** Medium Devices *********/
+@media (max-width: 850px){
+    .main .sections .container section{
+        width: 80%;
+    }
+    .main .row.recentItems{
+        flex-wrap: wrap;
+    }
+    .main .row.recentItems section{
+        width: 45%;
+        margin: 10px;
+        height: 265px;
+    }
+}
+
+/*********** Small Devices *********/
+@media (max-width: 600px){
+    .main header .banner{
+        display: none;
+    }
+    .main .sections .container section{
+        width: 100%;
+    }
+    .main .row.recentItems section{
+        width: 100%;
+        margin: 10px 0;
+    }
+    .main .footer footer .row{
+        flex-wrap: wrap;
+        text-align: center;
+    }
+}
+
+/*********** Ultra Small Devices **********/
+@media (max-width: 350px){
+    .main .sections .container section .sectionImages img{
+        display: none;
+    }
+}
+
+/*********** Initial Animation *********/
+@keyframes anime {
+    0%{
+        opacity: 0;
+        top: 100px;
+    }
+    100%{
+        opacity: 1;
+        top: 0;
+    }
+}
+
+.main .body, .main .footer{
+    position: relative;
+    animation-name: anime;
+    animation-duration: 2s;
+}
