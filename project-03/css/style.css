@@ -1,0 +1,53 @@
+body{
+    background-color: black;
+}
+.content {
+    height: 100vh !important;
+}
+.noData{
+    display: block;
+}
+.disNone{
+    display: none;
+}
+
+/********** POP UP ********/
+.popup{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .4);
+    opacity: 1;
+    transition-duration: 0.3s;
+}
+.closed {
+    opacity: 0 !important;
+    z-index: -500;
+}
+.popup .addTasks{
+    margin: 50px auto;
+    width: 490.54px;
+}
+.popup .addTasks .container #inputTask:focus{
+    border: none;
+}
+
+/******** MyAlert Invalid Input *******/
+.invalidInput{
+    position: fixed;
+    top: 0;
+    opacity: 1;
+    transition-duration: 0.3s;
+}
+
+.invalidInput .alert{
+    position: relative;
+}
+
+@media (max-width: 550px){
+    .popup .addTasks{
+        width: 100%;
+    }
+}

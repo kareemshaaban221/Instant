@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="content text-center m-auto w-75">
+        <h1 class="header text-primary font-weight-light row justify-content-around"><span class="col-sm-12"> Welcome at ToDo APP </span></h1>
+
+        <button class="openBtn btn btn-primary mt-5 w-75">Add Task Form Here</button>
+
+        <div class="tasks mt-5 p-4 rounded font-weight-bold bg-dark row justify-content-between">
+            <div class="alert alert-danger m-1 p-1 col-12 noData" role="alert">
+                No Data added Yet!
+            </div>
+        </div>
+    </div>
+
+    <div class="popup closed">
+        <div class="addTasks bg-light rounded col-sm-12">
+            <div class="head p-1">
+                <div class="row justify-content-between m-2 w-auto">
+                    <h4 class="m-0">Add Task</h4>
+                    <button type="button" class="close closeBtn" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+
+            <hr class="m-0 p-1">
+
+            <div class="container bg-dark text-light m-auto w-75 rounded text-center p-1 pt-4 pb-4 mb-2">
+                <div class="row justify-content-around">
+                    <label for="inputTask" class="col-12 p-1 w-auto">Add Task</label>
+                    <input type="text" placeholder="Add a Task" class="rounded border border-1 border-primary w-75 p-1" id="inputTask">
+                    <button class="btn btn-primary col-8 mt-3 mb-1 p-0 addTaskBtn">Add Task</button>
+                </div>
+            </div>
+
+            <hr class="p-1">
+
+            <div class="foot row justify-content-between">
+                <div></div>
+                <button class="closeBtn btn btn-secondary p-1 m-3">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="invalidInput row justify-content-around w-100 m-auto closed">
+        <div class="alert alert-danger text-center p-0 col-md-6 m-0 mt-3" role="alert">
+            Invalid Task Input!
+        </div>
+    </div>
+    
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
