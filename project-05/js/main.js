@@ -1,12 +1,21 @@
 // Document events
 document.addEventListener('scroll', scrollFun);
 
+//functions
+let onHover = (e)=>{
+    let elem = $(e.target);
+    let bgColor = elem.attr('class').split(' ')[0];
+    e.target.innerHTML = bgColor.split('-')[1];
+}
+let outHover = (e)=>{
+    e.target.innerHTML = '';
+}
+
 // Globals
 let respNav = document.getElementById('respNav');
 let respUl = document.getElementById('respUl');
 let mainUl = $('#mainUl').eq(0);
 let myNav = $('.myNav').eq(0);
-let upBtn = $('#upBtn').eq(0);
 
 let navBtn = document.getElementById('collapseNavBtn');
 navBtn.addEventListener('click', navCollapseFun);
@@ -14,7 +23,37 @@ navBtn.addEventListener('click', navCollapseFun);
 let closeIcon = document.querySelector('#closeIcon i');
 closeIcon.addEventListener('click', navCloseIcon);
 
+let upBtn = $('#upBtn').eq(0);
 upBtn.click(goToUp);
+
+let themesContainer = $('#themes');
+let themesList = themesContainer.children();
+for(theme of themesList){
+    $(theme).click(turnTheme);
+    $(theme).hover(onHover, outHover);
+}
+
+
+
+function turnTheme(e){
+    let clicked = $(e.target);
+    let bgColorClass = clicked.attr('class').split(' ')[0];
+    // let textColor = 'light';
+    // if(bgColorClass == 'btn-light'){
+    //     textColor = 'dark';
+    // }
+    bgColorClass = 'bg-' + bgColorClass.split('-')[1];
+    let ch = $('body').children();
+    for(elem of ch){
+        for(item of elem.classList){
+            if(item.includes('bg-')){
+                $(elem).removeClass(item);
+            }
+        }
+        $(elem).addClass(bgColorClass);
+    }
+    $('body').attr('class', bgColorClass);
+}
 
 function navCollapseFun(){
     respNav.classList.remove('d-none');
@@ -50,7 +89,10 @@ function scrollFun(){
         let news = $('#news').offset().top - 50;
         let footer = $('#footer').offset().top - 50;
 
-        if(y >= abouty && y < symy) { // the second item in the nav
+        if(y >= 0 && y < abouty){
+            scrollHighlight(0);
+        }
+        else if(y >= abouty && y < symy) { // the second item in the nav
             scrollHighlight(1);
         }
         else if(y >= symy && y < preveny) { // the third
@@ -117,7 +159,6 @@ function scrollHighlight(i){
         for(val of allLi){
             val.children[0].classList = '';
         }
-        console.log(i);
     }
     else if(!allLi[i].children[0].classList.contains('selected')){
         for(val of allLi){

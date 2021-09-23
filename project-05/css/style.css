@@ -56,6 +56,31 @@ header #upBtn{
     opacity: 0;
     transition: opacity 0.2s;
 }
+/** themes **/
+header .themes{
+    position: fixed;
+    left: 0;
+    top: 30%;
+}
+header .themes div{
+    width: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+    transition: width 0.3s;
+}
+header .themes div:hover{
+    width: 100px;
+    padding: 10px;
+}
+
+@media (max-width: 768px){
+    header .themes{
+        top: 50%;
+        margin: auto;
+    }
+}
+
 
 /********** responsive navbar ******/
 .respBg{
@@ -328,7 +353,7 @@ footer hr{
 .t-italic{
     font-style: italic;
 }
-.bg-img-main{
+.bgImg-main{
     background-image: url(../imgs/shape-a.png);
     background-size: cover;
 }
