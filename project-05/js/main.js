@@ -1,7 +1,7 @@
 // Document events
 document.addEventListener('scroll', scrollFun);
 
-//functions
+//functions with =>
 let onHover = (e)=>{
     let elem = $(e.target);
     let bgColor = elem.attr('class').split(' ')[0];
@@ -34,27 +34,7 @@ for(theme of themesList){
 }
 
 
-
-function turnTheme(e){
-    let clicked = $(e.target);
-    let bgColorClass = clicked.attr('class').split(' ')[0];
-    // let textColor = 'light';
-    // if(bgColorClass == 'btn-light'){
-    //     textColor = 'dark';
-    // }
-    bgColorClass = 'bg-' + bgColorClass.split('-')[1];
-    let ch = $('body').children();
-    for(elem of ch){
-        for(item of elem.classList){
-            if(item.includes('bg-')){
-                $(elem).removeClass(item);
-            }
-        }
-        $(elem).addClass(bgColorClass);
-    }
-    $('body').attr('class', bgColorClass);
-}
-
+/** functions **/
 function navCollapseFun(){
     respNav.classList.remove('d-none');
     setTimeout(function(){
@@ -78,7 +58,13 @@ function scrollFun(){
 
     let y = window.scrollY;
     if(y){
-        myNav.parent().addClass('bg-white'); //
+        if(!$('body').hasClass('bg-light')){
+            myNav.parent().addClass('bg-white'); //
+        }
+        else{
+            myNav.parent().removeClass('bg-light');
+            myNav.parent().addClass('bg-black'); //
+        }
 
         let abouty = $('#about').offset().top - 50;
         let symy = $('#symptoms').offset().top - 50;
@@ -118,7 +104,12 @@ function scrollFun(){
         }
     }
     else{
-        myNav.parent().removeClass('bg-white');
+        if(!$('body').hasClass('bg-light')){
+            myNav.parent().removeClass('bg-white');
+        }
+        else{
+            myNav.parent().removeClass('bg-black'); //
+        }
 
         scrollHighlight(0);
     }
@@ -166,4 +157,104 @@ function scrollHighlight(i){
         }
         allLi[i].children[0].classList.add('selected');
     }
+}
+
+function turnTheme(e){
+    let clicked = $(e.target);
+    let bgColorClass = clicked.attr('class').split(' ')[0];
+
+    if(bgColorClass == 'bg-primary'){
+        bgColorClass = 'bg-darkerBlue';
+    }
+
+    $('body').attr('class', bgColorClass);
+
+    let ch = $('body').children();
+    ch.push($('.spread')[0]);
+    for(elem of ch){
+        if($(elem).prop('tagName') == 'SCRIPT'){
+            continue;
+        }
+        for(item of elem.classList){
+            if(item.includes('bg-')){
+                $(elem).removeClass(item);
+            }
+        }
+        
+        $(elem).addClass(bgColorClass);
+    }
+
+    // handle spacial case of section.treatment text color
+    if(bgColorClass == 'bg-light'){
+        lightThemeChanges();
+    }
+    else{
+        lightThemeDiscard();
+    }
+}
+
+let treatmentText = $('#treatmentText');
+let footer = $('#footer');
+let myName = $('#myName');
+let footerIcons = $('#footerIcons');
+function lightThemeChanges(){
+    for(item of treatmentText.children()){
+        $(item).addClass('text-dark');
+    }
+
+    /***** changing elements themes *****/
+    var t = footer.children()[0].children;
+    for(item of t){
+        if(!$(item.children[0]).hasClass('text-dark')){
+            $(item.children[0]).removeClass('text-light');
+            $(item.children[0]).addClass('text-dark');
+        }
+        else{
+            break;
+        }
+    }
+    if(!myName.hasClass('text-dark')){
+        myName.removeClass('text-light');
+        myName.addClass('text-dark');
+    }
+    for(i of footerIcons.children()){
+        if(!i.classList.contains('text-dark'))
+            i.classList.add('text-dark');
+        else
+            break;
+    }
+
+    /***** changing upBtn themes *****/
+    upBtn.removeClass('btn-primary');
+    upBtn.addClass('btn-dark');
+}
+
+function lightThemeDiscard(){
+    for(item of treatmentText.children()){
+        $(item).removeClass('text-dark');
+    }
+
+    var t = footer.children()[0].children;
+    for(item of t){
+        if($(item.children[0]).hasClass('text-dark')){
+            $(item.children[0]).addClass('text-light');
+            $(item.children[0]).removeClass('text-dark');
+        }
+        else{
+            break;
+        }
+    }
+    if(myName.hasClass('text-dark')){
+        myName.addClass('text-light');
+        myName.removeClass('text-dark');
+    }
+    for(i of footerIcons.children()){
+        if(i.classList.contains('text-dark'))
+            i.classList.remove('text-dark');
+        else
+            break;
+    }
+
+    upBtn.addClass('btn-primary');
+    upBtn.removeClass('btn-dark');
 }

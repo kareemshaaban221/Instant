@@ -76,11 +76,11 @@
         </nav>
 
         <div class="themes fixed-right" id="themes">
-          <div class="btn-dark border border-warning rounded-right text-center"></div>
-          <div class="btn-light border border-warning rounded-right text-center"></div>
-          <div class="btn-danger border border-warning rounded-right text-center"></div>
-          <div class="btn-success border border-warning rounded-right text-center"></div>
-          <div class="btn-primary border border-warning rounded-right text-center"></div>
+          <div class="bg-dark text-light bold border border-warning rounded-right text-center"></div>
+          <div class="bg-light text-dark bold border border-warning rounded-right text-center"></div>
+          <div class="bg-danger text-light bold border border-warning rounded-right text-center"></div>
+          <div class="bg-green text-light bold border border-warning rounded-right text-center"></div>
+          <div class="bg-violet text-light bold border border-warning rounded-right text-center"></div>
         </div>
 
         <div id="upBtn" class="p-3 btn btn-primary hide d-none">
@@ -388,7 +388,7 @@
 
     <section class="treatment pt-5 pb-5 mb-5 plr-5 bg-darkBlueColor bgImg-main wow bounceInUp" id="treatment">
         <div class="row text-light">
-            <div class="col-lg-6 col-12 wow fadeInLeft">
+            <div class="col-lg-6 col-12 wow fadeInLeft" id="treatmentText">
                 <span class="cyanColor bold">BE CAREFULL & STAY SAFE</span>
                 <h2 class="bold pb-4">TREATMENT FOR CORONAVIRUS</h2>
                 <p class="pb-3"><span class="bold">To date, there is no vaccine and no specific antiviral medicine to prevent or treat COVID-2019.</span> However, those affected should receive care to relieve symptoms. People with serious illness should be hospitalized. Most patients recover thanks to supportive care.</p>
@@ -1172,14 +1172,14 @@
     </section>
 
     <footer class="pt-5 pb-5 plr-5 bgImg-main bg-darkColor defaultColor-lighter fixedSize-12px" id="footer">
-        <div class="row pl-4 pr-4">
+        <div class="row pl-4 pr-4" id="footer">
             <div class="col-lg-3 col-sm-4 mb-5 col-sm-12 wow bounceInLeft">
                 <h3 class="text-light bold text-uppercase fixedSize-20px">
                     c<object data="./imgs/virus-svgrepo-com.svg" width="20" height="20"></object>vid<span class="defaultColor">19</span>
                 </h3>
                 <p class="mt-3">This website is for health information and advice about coronavirus (COVID-19), how to prevent and protect yourself from disease.</p>
                 <p >Learn about the government response to coronavirus on GOV.UK.</p>
-                <div class="footerIcons">
+                <div class="footerIcons" id="footerIcons">
                     <a class="" href=""><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
                     <a class="ml-3" href=""><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>                    
                     <a class="ml-3" href=""><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a>                
@@ -1219,7 +1219,7 @@
 
         <div class="pr-4 pl-4 wow pulse">
             <div>
-                © 2020 COVID-19. Template implemented by <span class="text-light bold">Kareem Mohamed Shaaban ♥</span>.
+                © 2020 COVID-19. Template implemented by <span class="text-light bold " id="myName">Kareem Mohamed Shaaban ♥</span>.
             </div>
     
             <p class="mt-4">Disclaimer: We hope you find the information presented on this website useful. This website is for general information and raise awareness of (2019-nCoV) only. All the information based on WHO, NHS and CDC website. Information on our website is meant for awareness, if you have any doubt please verify from respective site.</p>

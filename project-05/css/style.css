@@ -287,11 +287,20 @@ footer hr{
 .cyanColor{
     color: #73e3ff;
 }
+.darkGrayColor{
+    color: rgb(44, 44, 44);
+}
 .darkBlueColor{
     color: #2766bb;
 }
 .bg-darkerBlue{
     background-color: #1b48a1ad;
+}
+.bg-violet{
+    background-color: rgb(128, 72, 118);
+}
+.bg-green{
+    background-color: mediumspringgreen;
 }
 .bg-darkBlueColor{
     background-color: #2766bb;
@@ -317,6 +326,10 @@ footer hr{
 }
 .bg-white{
     background-color: white;
+    transition: 0.3s;
+}
+.bg-black{
+    background-color: rgb(19, 19, 19);
     transition: 0.3s;
 }
 .show{
