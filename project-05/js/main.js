@@ -62,7 +62,7 @@ function scrollFun(){
             myNav.parent().addClass('bg-white'); //
         }
         else{
-            myNav.parent().removeClass('bg-light');
+            myNav.parent().removeClass('bg-white');
             myNav.parent().addClass('bg-black'); //
         }
 
