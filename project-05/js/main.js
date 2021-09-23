@@ -10,6 +10,17 @@ let onHover = (e)=>{
 let outHover = (e)=>{
     e.target.innerHTML = '';
 }
+let docClick = (e)=>{
+    // keep the toggle on after select theme
+    if(e.target.parentElement == document.getElementById('themes')){
+        ;
+    }
+    else if(themes.hasClass('show')){
+        $(themesBtn.children()[1]).toggleClass('d-none');
+        $(themesBtn.children()[0]).toggleClass('d-none');
+        themes.toggleClass('show');
+    }
+};
 
 // Globals
 let respNav = document.getElementById('respNav');
@@ -37,13 +48,7 @@ let themes = $('#themes');
 let themesBtn = $('#themesBtn');
 themesBtn.click(themesBtnAction)
 
-$(document).click(()=>{
-    if(themes.hasClass('show')){
-        $(themesBtn.children()[1]).toggleClass('d-none');
-        $(themesBtn.children()[0]).toggleClass('d-none');
-        themes.toggleClass('show');
-    }
-});
+$(document).click(docClick);
 
 /** functions **/
 function themesBtnAction(){
