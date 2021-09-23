@@ -337,6 +337,71 @@ footer hr {
     color: #2766bb;
 }
 
+.bg-darkLighter{
+    background-color: #131414;
+}
+
+.bg-lightLighter{
+    background-color: rgb(141, 141, 141);
+}
+
+.bg-dangerLighter{
+    background-color: #e2737e;
+}
+
+.bg-greenLighter{
+    background-color: rgb(2, 153, 95);
+}
+
+.bg-violetLighter{
+    background-color: rgb(68, 42, 63);
+}
+
+.bg-darkLighterBtn{
+    background-color: #131414;
+}
+
+.bg-lightLighterBtn{
+    background-color: rgb(141, 141, 141);
+}
+
+.bg-dangerLighterBtn{
+    background-color: #e2737e;
+}
+
+.bg-greenLighterBtn{
+    background-color: rgb(2, 153, 95);
+}
+
+.bg-violetLighterBtn{
+    background-color: rgb(68, 42, 63);
+}
+
+.bg-darkLighterBtn:hover{
+    background-color: #292929;
+    transition: 0.2s !important;
+}
+
+.bg-lightLighterBtn:hover{
+    background-color: rgb(71, 71, 71);
+    transition: 0.2s !important;
+}
+
+.bg-dangerLighterBtn:hover{
+    background-color: #e75f6c;
+    transition: 0.2s !important;
+}
+
+.bg-greenLighterBtn:hover{
+    background-color: rgb(18, 71, 51);
+    transition: 0.2s !important;
+}
+
+.bg-violetLighterBtn:hover{
+    background-color: rgb(121, 53, 107);
+    transition: 0.2s !important;
+}
+
 .bg-darkerBlue {
     background-color: #1b48a1ad;
 }

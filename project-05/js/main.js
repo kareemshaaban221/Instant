@@ -57,14 +57,21 @@ function scrollFun(){
     // let selected = 0;   // selected nav item to be highlighted
 
     let y = window.scrollY;
+    let theme = $('body').attr('class');
     if(y){
-        if(!$('body').hasClass('bg-light')){
-            myNav.parent().addClass('bg-white'); //
+        // if(!$('body').hasClass('bg-light')){
+        //     myNav.parent().addClass('bg-white'); //
+        // }
+        // else{
+        //     myNav.parent().removeClass('bg-white');
+        //     myNav.parent().removeClass('bg-light');
+        //     myNav.parent().addClass('bg-black'); //
+        // }
+        if(typeof(theme) != 'undefined'){
+            myNav.parent().addClass(theme+'Lighter');
         }
         else{
-            myNav.parent().removeClass('bg-white');
-            myNav.parent().removeClass('bg-light');
-            myNav.parent().addClass('bg-black'); //
+            myNav.parent().addClass('bg-white');
         }
 
         let abouty = $('#about').offset().top - 50;
@@ -105,11 +112,18 @@ function scrollFun(){
         }
     }
     else{
-        if(!$('body').hasClass('bg-light')){
-            myNav.parent().removeClass('bg-white');
+        // if(!$('body').hasClass('bg-light')){
+        //     myNav.parent().removeClass('bg-white');
+        // }
+        // else{
+        //     myNav.parent().removeClass('bg-black'); //
+        // }
+
+        if(typeof(theme) != 'undefined'){
+            myNav.parent().removeClass(theme+'Lighter');
         }
         else{
-            myNav.parent().removeClass('bg-black'); //
+            myNav.parent().removeClass('bg-white');
         }
 
         scrollHighlight(0);
@@ -164,9 +178,17 @@ function turnTheme(e){
     let clicked = $(e.target);
     let bgColorClass = clicked.attr('class').split(' ')[0];
 
-    if(bgColorClass == 'bg-primary'){
-        bgColorClass = 'bg-darkerBlue';
-    }
+
+    // if(myNav.parent().hasClass('bg-white')){
+    //     myNav.parent().removeClass('bg-white');
+    // }
+    // else{
+    //     myNav.parent().removeClass('bg-black');
+    // }
+
+    let oldTheme = $('body').attr('class');
+
+    myNav.parent().removeClass(oldTheme);
 
     $('body').attr('class', bgColorClass);
 
@@ -185,6 +207,9 @@ function turnTheme(e){
         $(elem).addClass(bgColorClass);
     }
 
+    myNav.parent().removeClass(bgColorClass);
+    myNav.parent().addClass(bgColorClass+'Lighter');
+
     // handle spacial case of section.treatment text color
     if(bgColorClass == 'bg-light'){
         lightThemeChanges();
@@ -192,6 +217,26 @@ function turnTheme(e){
     else{
         lightThemeDiscard();
     }
+
+    // handle danger text in danger theme to prevent color conflict
+    let dangerText = $('#dangerText');
+    if(bgColorClass == 'bg-danger'){
+        dangerText.removeClass('text-danger');
+        dangerText.addClass('headerColor');
+    }
+    else{
+        dangerText.addClass('text-danger');
+        dangerText.removeClass('headerColor');
+    }
+
+    // change upBtn theme color
+    if(typeof(oldTheme) != 'undefined'){
+        upBtn.removeClass(oldTheme+'LighterBtn');
+    }
+    else{
+        upBtn.removeClass('btn-primary');
+    }
+    upBtn.addClass(bgColorClass+'LighterBtn');
 }
 
 let treatmentText = $('#treatmentText');
@@ -226,8 +271,8 @@ function lightThemeChanges(){
     }
 
     /***** changing upBtn themes *****/
-    upBtn.removeClass('btn-primary');
-    upBtn.addClass('btn-dark');
+    // upBtn.removeClass('btn-primary');
+    // upBtn.addClass('btn-dark');
 }
 
 function lightThemeDiscard(){
@@ -256,6 +301,6 @@ function lightThemeDiscard(){
             break;
     }
 
-    upBtn.addClass('btn-primary');
-    upBtn.removeClass('btn-dark');
+    // upBtn.addClass('btn-primary');
+    // upBtn.removeClass('btn-dark');
 }
