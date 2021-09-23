@@ -33,8 +33,30 @@ for(theme of themesList){
     $(theme).hover(onHover, outHover);
 }
 
+let themes = $('#themes');
+let themesBtn = $('#themesBtn');
+themesBtn.click(themesBtnAction)
+
+$(document).click(()=>{
+    if(themes.hasClass('show')){
+        $(themesBtn.children()[1]).toggleClass('d-none');
+        $(themesBtn.children()[0]).toggleClass('d-none');
+        themes.toggleClass('show');
+    }
+});
 
 /** functions **/
+function themesBtnAction(){
+    if(!themes.hasClass('show')){
+        $(themesBtn.children()[0]).addClass('d-none');
+        $(themesBtn.children()[1]).removeClass('d-none');
+    }
+    else{
+        $(themesBtn.children()[1]).addClass('d-none');
+        $(themesBtn.children()[0]).removeClass('d-none');
+    }
+}
+
 function navCollapseFun(){
     respNav.classList.remove('d-none');
     setTimeout(function(){
@@ -178,14 +200,6 @@ function turnTheme(e){
     let clicked = $(e.target);
     let bgColorClass = clicked.attr('class').split(' ')[0];
 
-
-    // if(myNav.parent().hasClass('bg-white')){
-    //     myNav.parent().removeClass('bg-white');
-    // }
-    // else{
-    //     myNav.parent().removeClass('bg-black');
-    // }
-
     let oldTheme = $('body').attr('class');
 
     myNav.parent().removeClass(oldTheme);
@@ -232,11 +246,14 @@ function turnTheme(e){
     // change upBtn theme color
     if(typeof(oldTheme) != 'undefined'){
         upBtn.removeClass(oldTheme+'LighterBtn');
+        themesBtn.removeClass(oldTheme+'LighterBtn');
     }
     else{
         upBtn.removeClass('btn-primary');
+        themesBtn.removeClass('btn-primary');
     }
     upBtn.addClass(bgColorClass+'LighterBtn');
+    themesBtn.addClass(bgColorClass+'LighterBtn');
 }
 
 let treatmentText = $('#treatmentText');

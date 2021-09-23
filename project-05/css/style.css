@@ -65,6 +65,11 @@ header #upBtn {
 }
 
 /** themes **/
+header .themesBtn{
+    position: fixed;
+    left: 0;
+    top: 20%;
+}
 header .themes {
     position: fixed;
     left: 0;
@@ -82,13 +87,6 @@ header .themes div {
 header .themes div:hover {
     width: 100px;
     padding: 10px;
-}
-
-@media (max-width: 768px) {
-    header .themes {
-        top: 50%;
-        margin: auto;
-    }
 }
 
 

@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <!-- Nav header -->
+  <!-- Nav header ------------------------------------------------------------------------->
   <header class="plr-5 pt-2 pb-3 fixed-top">
     <div class="row myNav justify-content-between border-bottom border-warning">
       <div class="logo">
@@ -78,7 +78,14 @@
       </div>
     </nav>
 
-    <div class="themes fixed-right" id="themes">
+    <button class="btn-primary themesBtn bold p-2 border text-light rounded-right border-warning" type="button"
+      data-toggle="collapse" data-target="#themes" aria-expanded="false" aria-controls="themes" id="themesBtn">
+      Themes
+      <i class="fa fa-arrow-down ml-2" aria-hidden="true"></i>
+      <i class="fa fa-arrow-up ml-2 d-none" aria-hidden="true"></i>
+    </button>
+
+    <div class="collapse themes" id="themes">
       <div class="bg-dark text-light bold border border-warning rounded-right text-center"></div>
       <div class="bg-light text-dark bold border border-warning rounded-right text-center"></div>
       <div class="bg-danger text-light bold border border-warning rounded-right text-center"></div>
@@ -90,6 +97,8 @@
       <i class="fa fa-arrow-up fa-lg" aria-hidden="true"></i>
     </div>
   </header>
+
+  <!-- home section ----------------------------------------------------------------->
   <section class="home plr-5 row pt-150px pb-4 bg-smokeColor bgImg-main" id="home">
     <div class="homeContent text-center col-lg-6">
       <div class="hText row p-5 justify-content-around">
@@ -138,6 +147,7 @@
     </div>
   </section>
 
+  <!-- about section ------------------------------------------------------------------>
   <div class="about" id="about">
     <section class="pt-5 pb-5 mt-5 plr-5 row">
       <div class="col-lg-7 headerColor wow bounceInLeft">
@@ -250,6 +260,7 @@
     </section>
   </div>
 
+  <!-- symptoms section ----------------------------------------------------------------------->
   <section class="symptoms pt-5 pb-5 mt-5 mb-5 plr-5" id="symptoms">
     <div class="row justify-content-around text-center defaultColor wow fadeInLeftBig">
       <span class="col-12 selected bold">WHAT ARE THE SYMPTOMS OF COVID-19 ?</span>
@@ -305,6 +316,7 @@
     </div>
   </section>
 
+  <!-- prevention section ------------------------------------------------------------------------>
   <section class="prevention pt-5 pb-5 mt-5 plr-5 bg-smokeColor" id="prevention">
     <div class="row justify-content-around text-center defaultColor mt-5 wow rotateInDownLeft">
       <span class="col-12 selected bold">HOW TO PROTECT YOURSELF</span>
@@ -424,6 +436,7 @@
     </div>
   </section>
 
+  <!-- treatment section ------------------------------------------------------------------------->
   <section class="treatment pt-5 pb-5 mb-5 plr-5 bg-darkBlueColor bgImg-main wow bounceInUp" id="treatment">
     <div class="row text-light">
       <div class="col-lg-6 col-12 wow fadeInLeft" id="treatmentText">
@@ -454,6 +467,7 @@
     </div>
   </section>
 
+  <!-- do don't section ------------------------------------------------------------------------->
   <section class="do-dont pt-5 pb-5 mb-5 plr-5 text-center bg-smokeColor" id="doDont">
     <div class="content headerColor wow bounceInUp">
       <h5 class="selected bold">DO’S & DON’TS</h5>
@@ -527,6 +541,7 @@
     </div>
   </section>
 
+  <!-- fq section ------------------------------------------------------------------------------->
   <section class="fQ pt-5 pb-5 mb-5 plr-5 text-center" id="fQ">
     <div class="content headerColor wow pulse">
       <h5 class="selected bold">FREQUENTLY ASKED QUESTION</h5>
@@ -1459,6 +1474,7 @@
       </div>
   </section>
 
+  <!-- news section --------------------------------------------------------------------------->
   <section class="news pt-5 pb-5 mb-5 plr-5 text-center bg-smokeColor" id="news">
     <div class="content headerColor wow fadeInLeft">
       <h5 class="selected bold">RECENT FROM BLOG</h5>
@@ -1499,6 +1515,7 @@
     </div>
   </section>
 
+  <!-- footer ------------------------------------------------------------------------------------------->
   <footer class="pt-5 pb-5 plr-5 bgImg-main bg-darkColor defaultColor-lighter fixedSize-12px" id="footer">
     <div class="row pl-4 pr-4" id="footer">
       <div class="col-lg-3 col-sm-4 mb-5 col-sm-12 wow bounceInLeft">
