@@ -1,0 +1,26 @@
+<div [style.overflow]="'auto'">
+    <table class="table table-info rounded">
+        <tr>
+            <th class="border-light">ID</th>
+            <th class="border-light">Name</th>
+            <th class="border-light">Position</th>
+            <th class="border-light text-center">Delete</th>
+            <!-- <th class="border-light text-center">Edit</th> -->
+        </tr>
+        <tr *ngFor="let record of db">
+            <td>{{record.id}}</td>
+            <td>{{record.name}}</td>
+            <td>{{record.position}}</td>
+            <td class="text-center">
+                <button class="btn btn-danger col-md-6 col-12" (click)="delete($event)"><i class="fa fa-trash"></i></button>
+            </td>
+            <!-- <td class="text-center">
+                <button class="btn btn-primary col-md-6 col-12"><i class="fa fa-edit"></i></button>
+            </td> -->
+        </tr>
+    </table>
+</div>
+
+<button class="btn btn-dark pl-1 pr-1 fw-bold" (click)="return()">
+    <i class="fa fa-arrow-left"></i> Return
+</button>

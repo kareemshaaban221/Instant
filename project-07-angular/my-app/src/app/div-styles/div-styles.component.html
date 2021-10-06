@@ -1,0 +1,29 @@
+<h1 class="text-center mb-4">Create New Div App</h1>
+<div class="p-4 border rounded border-dark">
+  <div class="row justify-content-around mb-5">
+    <!-- <input type="text" placeholder="Width" (keyup)="setWid($event.target.value)">
+            <input type="text" placeholder="Height" (keyup)="setHei($event.target.value)">
+            <input type="text" placeholder="bg-color" (keyup)="setBg($event.target.value)"> -->
+    <div class="col-sm-3 mb-3">
+        <div class="row justify-content-between">
+            <input type="number" min="0" placeholder="Width" [(ngModel)]="wid" class="col-7">
+            <span class="col">px</span>
+        </div>
+    </div>
+    <div class="col-sm-3 mb-3">
+        <div class="row justify-content-between">
+            <input type="number" min="0" placeholder="Height" [(ngModel)]="hei" class="col-7">
+            <span class="col">px</span>
+        </div>
+    </div>
+    <div class="col-sm-3 mb-3">
+        <div class="row justify-content-between">
+            <input type="text" placeholder="bg-color" [(ngModel)]="bg" class="col">
+        </div>
+    </div>
+  </div>
+  <div class="m-auto rounded" id="result" [style.width]="getWid()" [style.height]="getHei()"
+    [style.backgroundColor]="getBg()">
+
+  </div>
+</div>

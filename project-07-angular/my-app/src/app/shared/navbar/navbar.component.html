@@ -1,0 +1,27 @@
+<nav class="navbar justify-content-around-lg bg-dark border-bottom border-light navbar-expand-lg navbar-dark">
+  <div class="brand col-6 text-light">
+    Quick Task
+  </div>
+  <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fa fa-bars text-dark"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="nav justify-content-around col-12 bg-light rounded box-shadow mt-3 mt-lg-0 p-0">
+      <li class="p-2 rounded m-1 col-lg-3 text-lg-center "> <a routerLink="/divStyles" class="text-dark">Div-Styles</a></li>
+      <li class="p-2 rounded m-1 col-lg-3 text-lg-center"> <a routerLink="/todoList" class="text-dark">ToDo-List</a></li>
+      <li class="p-2 rounded m-1 col-lg-4 text-lg-center  dropdown">
+        <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Final-Project
+        </div>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item text-dark" routerLink="/finalProject">Get-Data</a>
+          <a class="dropdown-item text-dark" routerLink="/finalProject/displayData">Display-Data</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</nav>

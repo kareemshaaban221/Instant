@@ -1,0 +1,33 @@
+<fieldset class="border border-dark rounded p-3">
+  <legend class="w-auto p-3">Enter your data</legend>
+  <div class="container">
+    <div class="form-group">
+        <div class="alert alert-warning" *ngIf="!user.name && !user.position">
+            Please enter required data!
+        </div>
+      <label for="formGroupExampleInput">Name</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" required #nameBox="ngModel" ngModel [(ngModel)]="user.name" placeholder="Enter your name">
+
+      <div class="alert alert-danger p-2 mt-2" *ngIf="(nameBox.invalid && positionBox.valid) && (positionBox.touched || nameBox.touched)">
+        Note: Required field (must <span class="text-danger fw-bold">NOT</span> be empty)
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Position</label>
+      <input type="text" class="form-control" id="formGroupExampleInput2" required #positionBox="ngModel" ngModel [(ngModel)]="user.position" placeholder="Enter your position">
+
+      <div class="alert alert-danger p-2 mt-2" *ngIf="( (positionBox.invalid && nameBox.valid) && (positionBox.touched || nameBox.touched) ) || (user.position && user.position.length > maxLenForPos)">
+        <span *ngIf="positionBox.invalid">Note: Required field (must <span class="text-danger fw-bold">NOT</span> be empty)</span>
+        <span *ngIf="user.position.length>maxLenForPos">Note: Max length <span class="text-danger fw-bold">IS</span> {{maxLenForPos}}</span>
+      </div>
+    </div>
+    
+    <div (click)="send()" *ngIf="!( (positionBox.invalid) || (!user.position || user.position.length > maxLenForPos) ) && !(nameBox.invalid)" class="d-inline-block">
+        <button class="btn btn-info" #sendBtn>Send</button>
+    </div>
+    <div *ngIf="!(!((positionBox.invalid) || (!user.position || user.position.length > maxLenForPos)) && !(nameBox.invalid))" disabled>
+        <button class="btn btn-info" #sendBtn disabled>Send</button>
+    </div>
+  </div>
+
+</fieldset>

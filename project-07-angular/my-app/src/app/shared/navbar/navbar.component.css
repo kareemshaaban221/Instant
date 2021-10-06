@@ -1,0 +1,20 @@
+nav{
+    font-weight: bold;
+}
+ul li{
+    transition: background-color 0.2s;
+}
+ul li:hover{
+    background-color: #343a40;
+    color: white !important;
+}
+ul li:hover a{
+    color: white !important;
+}
+ul li:hover div a{
+    color: black !important;
+}
+ul li #dropdownMenuButton:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
